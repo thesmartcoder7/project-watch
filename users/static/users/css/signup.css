@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 0.05vw;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #1c1d21;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .left {
+  width: 50%;
+  height: 100%;
+  border-right: 0.1vw solid #009ff6;
+  padding: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .left img {
+  width: 25vw;
+}
+
+main .right {
+  width: 50%;
+  padding: 3% 10%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .right form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .right form h1 {
+  color: #009ff6;
+  font-size: 2.5vw;
+  letter-spacing: 0.1vw;
+  margin-bottom: 10%;
+}
+
+main .right form label {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 5% 0;
+}
+
+main .right form label span {
+  width: 100%;
+  color: #dcdddd;
+  margin-bottom: 1%;
+  font-size: 0.9vw;
+}
+
+main .right form label input {
+  width: 100%;
+  color: #dcdddd;
+  font-size: 0.9vw;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 0.1vw solid #009ff6;
+  padding: 2%;
+}
+
+main .right form input[type="submit"] {
+  background-color: #009ff6;
+  color: #dcdddd;
+  outline: none;
+  border: 0.1vw solid #009ff6;
+  padding: 3% 5%;
+  font-size: 0.9vw;
+  font-weight: 500;
+  margin-top: 5%;
+  border-radius: 0.3vw;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+main .right form input[type="submit"]:hover {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  background-color: transparent;
+  color: #009ff6;
+}
+/*# sourceMappingURL=signup.css.map */
