@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'projects/css/index.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'projects/images/folder.png' %}"
+      type="image/x-icon"
+    />
+    <title>Home</title>
+  </head>
+  <body>
+    <main>
+      <!-- header section -->
+      <header>
+        <div class="left">
+          <div class="logo">
+            <a href="">
+              <h1>Project<span>Watch</span></h1>
+            </a>
+          </div>
+          <div class="links">
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">Profile</a></li>
+              <li><a href="">Projects</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <div class="avatar">
+            <div class="image">
+              <img
+                src="{% static 'projects/images/sam.jpeg' %}"
+                alt="user-image"
+              />
+            </div>
+          </div>
+          <div class="username">
+            <p>Username</p>
+            <a href="">Sign Out</a>
+          </div>
+          <form>
+            <input type="text" name="search" id="search" />
+            <input type="submit" value="Search" />
+          </form>
+        </div>
+      </header>
+    </main>
+  </body>
+</html>
