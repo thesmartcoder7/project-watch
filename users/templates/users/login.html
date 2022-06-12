@@ -1,0 +1,21 @@
+{% extends 'users/signup.html'%}
+
+<!--  -->
+
+{% block title %}
+<title>Signup</title>
+{% endblock %}
+
+<!--  -->
+{% block form %}
+<h1>Sign In</h1>
+<label for="username">
+  <span>Username</span>
+  <input type="text" id="username" name="username" />
+</label>
+<label for="pasword">
+  <span>Password</span>
+  <input type="password" name="password" id="password" />
+</label>
+<input type="submit" value="Sign In" />
+{% endblock %}
