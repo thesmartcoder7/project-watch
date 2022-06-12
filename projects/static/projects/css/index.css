@@ -264,4 +264,206 @@ main header .right form input[type="submit"] {
 main header .right form input[type="submit"]:hover {
   background-color: #009ff6;
 }
+
+main #hero {
+  width: 100%;
+  padding: 5% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main #hero .left {
+  width: 60%;
+  padding: 0 5%;
+  border-right: 0.2vw solid #28292c;
+}
+
+main #hero .left .top-rated {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 5%;
+}
+
+main #hero .left .top-rated svg {
+  width: 2vw;
+  height: 2vw;
+  color: #009ff6;
+}
+
+main #hero .left .top-rated h3 {
+  margin-left: 2%;
+  font-size: 1.1vw;
+  color: #dcdddd;
+}
+
+main #hero .left .project-image {
+  width: 100%;
+  border-radius: 0.3vw;
+}
+
+main #hero .left .project-image img {
+  width: 100%;
+  border-radius: 0.3vw;
+}
+
+main #hero .left .user-details {
+  width: 100%;
+  margin: 3% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #hero .left .user-details p {
+  font-size: 1vw;
+  color: #dcdddd;
+}
+
+main #hero .left .user-details p a {
+  display: inline-block;
+  text-decoration: none;
+  color: #009ff6;
+}
+
+main #hero .left .user-details p a:hover {
+  -webkit-animation: shake 0.3s;
+          animation: shake 0.3s;
+}
+
+main #hero .left .cta {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #hero .left .cta a {
+  margin: 0 2%;
+  padding: 1.5% 4%;
+  text-decoration: none;
+  color: #dcdddd;
+  background-color: #009ff6;
+  border: 0.1vw solid #009ff6;
+  font-size: 0.9vw;
+  border-radius: 0.3vw;
+  font-weight: 500;
+}
+
+main #hero .right {
+  width: 40%;
+  margin: 0 5%;
+}
+
+main #hero .right h2 {
+  font-size: 1.2vw;
+  color: #dcdddd;
+  margin-bottom: 10%;
+}
+
+main #hero .right .rate .ratings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main #hero .right .rate .ratings .rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #hero .right .rate .ratings .rating .score {
+  width: 5vw;
+  height: 5vw;
+  border: 0.2vw solid #009ff6;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5%;
+}
+
+main #hero .right .rate .ratings .rating .score p {
+  color: #dcdddd;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+main #hero .right .rate .ratings .rating p {
+  margin: 5% 0;
+  color: #dcdddd;
+  font-size: 1vw;
+  text-align: center;
+}
+
+main #hero .right .rate h3 {
+  color: #dcdddd;
+  margin-top: 10%;
+  font-size: 1.2vw;
+}
+
+main #hero .right .rate .single {
+  margin: 5% 0;
+}
+
+main #hero .right .rate .single .crit {
+  color: #009ff6;
+  font-weight: 500;
+  font-size: 1vw;
+  line-height: 1.7vw;
+}
+
+main #hero .right .rate .single p {
+  color: #dcdddd;
+  font-size: 0.9vw;
+  line-height: 1.5vw;
+}
 /*# sourceMappingURL=index.css.map */

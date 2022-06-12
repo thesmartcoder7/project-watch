@@ -11,7 +11,7 @@ main {
   height: 100%;
   padding: 3% 5%;
 
-  //header styling
+  // - - - - - header styling - - - - - - //
   header {
     width: 100%;
     height: 20%;
@@ -144,4 +144,145 @@ main {
       }
     }
   }
+
+  // - - - - - header end - - - - - //
+
+  // - - - - - hero section styling - - - - - //
+
+  #hero {
+    width: 100%;
+    padding: 5% 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .left {
+      width: 60%;
+      padding: 0 5%;
+      border-right: 0.2vw solid #28292c;
+      .top-rated {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 5%;
+        svg {
+          width: 2vw;
+          height: 2vw;
+          color: $primary_color;
+        }
+        h3 {
+          margin-left: 2%;
+          font-size: 1.1vw;
+          color: $text_color;
+        }
+      }
+      .project-image {
+        width: 100%;
+        border-radius: 0.3vw;
+        img {
+          width: 100%;
+          border-radius: 0.3vw;
+        }
+      }
+      .user-details {
+        width: 100%;
+        margin: 3% 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+          font-size: 1vw;
+          color: $text_color;
+          a {
+            display: inline-block;
+            text-decoration: none;
+            color: $primary_color;
+            &:hover {
+              animation: shake 0.3s;
+            }
+          }
+        }
+      }
+
+      .cta {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a {
+          margin: 0 2%;
+          padding: 1.5% 4%;
+          text-decoration: none;
+          color: $text_color;
+          background-color: $primary_color;
+          border: 0.1vw solid $primary_color;
+          font-size: 0.9vw;
+          border-radius: 0.3vw;
+          font-weight: 500;
+        }
+      }
+    }
+    .right {
+      width: 40%;
+      margin: 0 5%;
+      h2 {
+        font-size: 1.2vw;
+        color: $text_color;
+        margin-bottom: 10%;
+      }
+      .rate {
+        .ratings {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .rating {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .score {
+              width: 5vw;
+              height: 5vw;
+              border: 0.2vw solid $primary_color;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 5%;
+              p {
+                color: $text_color;
+                font-size: 1.5vw;
+                font-weight: 500;
+              }
+            }
+            p {
+              margin: 5% 0;
+              color: $text_color;
+              font-size: 1vw;
+              text-align: center;
+            }
+          }
+        }
+        h3 {
+          color: $text_color;
+          margin-top: 10%;
+          font-size: 1.2vw;
+        }
+        .single {
+          margin: 5% 0;
+          .crit {
+            color: $primary_color;
+            font-weight: 500;
+            font-size: 1vw;
+            line-height: 1.7vw;
+          }
+          p {
+            color: $text_color;
+            font-size: 0.9vw;
+            line-height: 1.5vw;
+          }
+        }
+      }
+    }
+  }
+  // - - - - - hero end - - - - - //
 }
