@@ -7,3 +7,6 @@ def home (request):
 
 def profile(request):
     return render(request, 'projects/profile.html')
+
+def project(request):
+    return render(request, 'projects/project.html')
