@@ -471,6 +471,7 @@ main #hero .right .rate .single p {
 main #users {
   width: 100%;
   padding: 5%;
+  margin-bottom: 5%;
 }
 
 main #users .heading {
@@ -586,6 +587,7 @@ main #users .all-users .user .details p {
 main #latest {
   width: 100%;
   padding: 5%;
+  margin-bottom: 5%;
 }
 
 main #latest .heading {
@@ -599,7 +601,7 @@ main #latest .heading {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  margin-bottom: 7%;
+  margin-bottom: 5%;
 }
 
 main #latest .heading h3 {
@@ -615,5 +617,79 @@ main #latest .heading hr {
   width: 5vw;
   height: 0.15vw;
   background-color: #009ff6;
+}
+
+main #latest .all-projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #latest .all-projects .project {
+  width: 28%;
+  margin: 2% 2.5%;
+  border-radius: 0.5vw;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+main #latest .all-projects .project .image {
+  width: 100%;
+  border-radius: 0.5vw;
+}
+
+main #latest .all-projects .project .image img {
+  width: 100%;
+  border-radius: 0.5vw;
+}
+
+main #latest .all-projects .project .cta {
+  position: relative;
+  margin-top: 5%;
+  text-align: center;
+  width: 80%;
+  padding: 5% 10%;
+  border-radius: 0.5vw;
+  margin-top: -15%;
+  background-color: #242528;
+}
+
+main #latest .all-projects .project .cta a {
+  font-size: 0.9vw;
+  color: #009ff6;
+  text-decoration: none;
+}
+
+main #latest .all-projects .project .cta a:hover {
+  color: #dcdddd;
+}
+
+main #latest .all-projects .project .cta h3 {
+  margin-top: 2%;
+  font-size: 1vw;
+  font-weight: 500;
+  color: #dcdddd;
+  text-transform: capitalize;
+  margin-bottom: 2%;
 }
 /*# sourceMappingURL=index.css.map */
