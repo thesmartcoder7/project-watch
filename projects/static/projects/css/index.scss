@@ -444,3 +444,20 @@ main {
     }
   }
 }
+
+// - - - - - footer styling - - - - - //
+footer {
+  margin-top: 10%;
+  text-align: center;
+  width: 100%;
+  padding: 2% 7%;
+
+  .container {
+    border-top: 0.1vw solid $tags_color;
+    padding: 5% 0 3% 0;
+    p {
+      color: $text_color;
+      font-size: 0.9vw;
+    }
+  }
+}

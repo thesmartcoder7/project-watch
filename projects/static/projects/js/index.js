@@ -5,4 +5,4 @@ scrollContainer.addEventListener("wheel", (evt) => {
   scrollContainer.scrollLeft += evt.deltaY;
 });
 
-console.log("this is working");
+document.querySelector(".current-year").textContent = new Date().getFullYear();

@@ -692,4 +692,21 @@ main #latest .all-projects .project .cta h3 {
   text-transform: capitalize;
   margin-bottom: 2%;
 }
+
+footer {
+  margin-top: 10%;
+  text-align: center;
+  width: 100%;
+  padding: 2% 7%;
+}
+
+footer .container {
+  border-top: 0.1vw solid #242528;
+  padding: 5% 0 3% 0;
+}
+
+footer .container p {
+  color: #dcdddd;
+  font-size: 0.9vw;
+}
 /*# sourceMappingURL=index.css.map */
