@@ -10,3 +10,6 @@ def profile(request):
 
 def project(request):
     return render(request, 'projects/project.html')
+
+def logged_user(request):
+    return render(request, 'projects/user.html')
