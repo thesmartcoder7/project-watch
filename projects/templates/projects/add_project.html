@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'projects/css/add_project.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'projects/images/folder.png' %}"
+      type="image/x-icon"
+    />
+    <title>Home</title>
+  </head>
+  <body>
+    <main>
+      <!-- header section -->
+      <header>
+        <div class="left">
+          <div class="logo">
+            <a href="{% url 'projects-home' %}">
+              <h1>Project<span>Watch</span></h1>
+            </a>
+          </div>
+          <div class="links">
+            <ul>
+              <li><a href="{% url 'projects-home' %}">Home</a></li>
+              <li><a href="{% url 'projects-user' %}">Profile</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="right">
+          <div class="avatar">
+            <div class="image">
+              <img
+                src="{% static 'projects/images/sam.jpeg' %}"
+                alt="user-image"
+              />
+            </div>
+          </div>
+          <div class="username">
+            <p>Samuel Martins</p>
+            <a href="{% url 'users-signout' %}">Sign Out</a>
+          </div>
+          <form>
+            <input type="text" name="search" id="search" />
+            <input type="submit" value="Search" />
+          </form>
+        </div>
+      </header>
+
+      <!-- hero section -->
+      <section id="hero">
+        <div class="add-form">
+          <form method="post", enctype="multipart/form-data">
+            {% csrf_token %}
+            <!--  -->
+            {{add_form}}
+            <!--  -->
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+          <p>All Rights Reserved | <span class="current-year"></span></p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="{% static 'projects/js/index.js' %}"></script>
+  </body>
+</html>

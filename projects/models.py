@@ -4,8 +4,9 @@ from django.contrib.auth.models import User
 # Create your models here
 
 class Project(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='project', default=None)
     title = models.CharField(max_length=1000)
-    image = models.ImageField(upload_to='project_watch/project_images')
+    image = models.ImageField( default='default.png', upload_to='project_images/', blank=True)
     description = models.TextField()
     link = models.CharField(max_length=5000)
 
@@ -15,7 +16,7 @@ class Project(models.Model):
 
 
 class Rating(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='rating')
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     design = models.IntegerField(default=0)
     usability = models.IntegerField(default=0)
