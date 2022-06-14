@@ -57,7 +57,7 @@
 body {
   background-color: #1c1d21;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 
 main {
@@ -268,7 +268,7 @@ main header .right form input[type="submit"]:hover {
 main #hero {
   width: 100%;
   height: 100%;
-  padding: 7% 15%;
+  padding: 5% 15% 7% 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -283,11 +283,97 @@ main #hero {
 main #hero .add-form {
   width: 100%;
   height: 100%;
+  padding: 5%;
   border: 0.1vw solid #009ff6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+main #hero .add-form h3 {
+  color: #009ff6;
+  font-size: 1.5vw;
+  margin-bottom: 5%;
+}
+
+main #hero .add-form form {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+main #hero .add-form form input {
+  width: 100%;
+  color: #dcdddd;
+  font-size: 0.9vw;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 0.1vw solid #009ff6;
+  padding: 2%;
+  margin-bottom: 7%;
+}
+
+main #hero .add-form form input[type="submit"] {
+  background-color: #009ff6;
+  color: #dcdddd;
+  outline: none;
+  border: 0.1vw solid #009ff6;
+  padding: 3% 5%;
+  font-size: 0.9vw;
+  font-weight: 500;
+  border-radius: 0.3vw;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+main #hero .add-form form input[type="submit"]:hover {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  background-color: transparent;
+  color: #009ff6;
+}
+
+main #hero .add-form form textarea {
+  width: 100%;
+  margin: 5% 0;
+  color: #dcdddd;
+  background-color: transparent;
+  border: 0.1vw solid #009ff6;
+  font-size: 0.8vw;
+  padding: 2%;
+  height: 7vw;
+}
+
+main #hero .add-form form label {
+  color: #009ff6;
+  font-size: 0.9vw;
 }
 
 footer {
-  margin-top: 5%;
+  margin-top: 3%;
   text-align: center;
   width: 100%;
   padding: 2% 7%;

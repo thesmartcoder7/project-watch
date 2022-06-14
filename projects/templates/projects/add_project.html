@@ -43,17 +43,14 @@
             <p>Samuel Martins</p>
             <a href="{% url 'users-signout' %}">Sign Out</a>
           </div>
-          <form>
-            <input type="text" name="search" id="search" />
-            <input type="submit" value="Search" />
-          </form>
         </div>
       </header>
 
       <!-- hero section -->
       <section id="hero">
         <div class="add-form">
-          <form method="post", enctype="multipart/form-data">
+          <h3>Add a Project</h3>
+          <form method="post" , enctype="multipart/form-data">
             {% csrf_token %}
             <!--  -->
             {{add_form}}
