@@ -27,7 +27,6 @@
             <ul>
               <li><a href="{% url 'projects-home' %}">Home</a></li>
               <li><a href="{% url 'projects-user' %}">Profile</a></li>
-              <li><a href="{% url 'projects-user' %}">Profile</a></li>
             </ul>
           </div>
         </div>
@@ -66,7 +65,16 @@
           </div>
         </div>
         <div class="right">
-          <h2>Ratings . . .</h2>
+          <div class="description">
+            <h3>Description . . .</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Consectetur nobis distinctio aliquam doloremque! Rerum, quasi
+              facere? Numquam repellat hic, quibusdam sed velit ipsum
+              architecto, perferendis inventore mollitia dolorem est quod?
+            </p>
+          </div>
+          <h2>User Rating . . .</h2>
           <div class="rate">
             <div class="ratings">
               <div class="rating">
@@ -95,26 +103,36 @@
               </div>
             </div>
             <br />
-            <div class="single">
-              <p class="crit">Design</p>
-              <p>How would you rate the design of the project?</p>
+            <div class="user_rating">
+              <h3>Give Your Rating . . .</h3>
+              <form method="post">
+                {% csrf_token %}
+                <div class="all">
+                  <div class="item">
+                    <p class="label">{{r_form.design.label}} :</p>
+                    {{r_form.design}}
+                  </div>
+                  <div class="item">
+                    <p class="label">{{r_form.usability.label}} :</p>
+                    {{r_form.usability}}
+                  </div>
+                  <div class="item">
+                    <p class="label">{{r_form.content.label}} :</p>
+                    {{r_form.content}}
+                  </div>
+                </div>
+                <input type="submit" value="Rate" />
+              </form>
             </div>
-            <div class="single">
-              <p class="crit">Usability</p>
-              <p>How would you rate the project's usability?</p>
-            </div>
-            <div class="single">
-              <p class="crit">Content</p>
-              <p>What do you think about the project's content?</p>
-            </div>
-            <button>Rate</button>
           </div>
         </div>
       </section>
 
       <footer>
         <div class="container">
-          <p>All Rights Reserved | <span class="current-year"></span></p>
+          <p>
+            All Rights Reserved | <span class="current-year">{{year}}</span>
+          </p>
         </div>
       </footer>
     </main>

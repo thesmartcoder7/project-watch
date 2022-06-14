@@ -2,6 +2,8 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .forms import *
+from users.forms import *
+from datetime import date
 
 
 # Create your views here.
@@ -18,8 +20,34 @@ def profile(request):
 
 
 @login_required
-def project(request):
-    return render(request, 'projects/project.html')
+def project(request, project_id):
+    project = Project.objects.get(id=project_id)
+    r_form = RatingForm()
+    context = {
+        'r_form': r_form,
+        'year': date.today().year
+    }
+    if request.method == 'POST':
+        if r_form.is_valid():
+            rating = Rating.objects.create(
+                design=request.POST.get('design'), 
+                usability=request.POST.get('usability'), 
+                content=request.POST.get('content'),
+                user=request.user,
+                project=project
+            )
+            rating.save()
+            return redirect('projects-project', project_id)
+        else:
+            return render(request, 'projects/project.html', context )
+    else:
+        r_form = RatingForm()
+        context = {
+            'r_form': r_form,
+            'year': date.today().year
+        }
+        return render(request, 'projects/project.html', context)
+
 
 
 
@@ -30,10 +58,40 @@ def logged_user(request):
 
 
 @login_required
+def edit_profile(request):
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile,)
+        context = {
+            'u_form': u_form,
+            'p_form': p_form,
+            'year': date.today().year
+        }
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+
+            return redirect('projects-user')
+        else:
+            return render(request, 'projects/user_edit.html', context)
+    else:
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile,)
+        context = {
+            'u_form': u_form,
+            'p_form': p_form,
+            'year': date.today().year
+        }
+        return render(request, 'projects/user_edit.html', context)
+
+
+
+@login_required
 def add_project(request):
     add_form = NewProjectForm()
     context = { 
-        'add_form': add_form
+        'add_form': add_form,
+        'year': date.today().year
     }
     user = User.objects.get(username=request.user.username)
     if request.method == 'POST':

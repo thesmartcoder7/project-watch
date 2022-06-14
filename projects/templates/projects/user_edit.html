@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'projects/css/add_project.css' %}" />
+    <link rel="stylesheet" href="{% static 'projects/css/edit_user.css' %}" />
     <link
       rel="shortcut icon"
       href="{% static 'projects/images/folder.png' %}"
@@ -49,11 +49,13 @@
       <!-- hero section -->
       <section id="hero">
         <div class="add-form">
-          <h3>Add a Project</h3>
+          <h3>Edit Your Profile Details</h3>
           <form method="post" , enctype="multipart/form-data">
             {% csrf_token %}
             <!--  -->
-            {{add_form}}
+            {{u_form}}
+            <!--  -->
+            {{p_form}}
             <!--  -->
             <input type="submit" value="Submit" />
           </form>
@@ -62,9 +64,7 @@
 
       <footer>
         <div class="container">
-          <p>
-            All Rights Reserved | <span class="current-year">{{year}}</span>
-          </p>
+          <p>All Rights Reserved | <span class="current-year">{{year}}</span></p>
         </div>
       </footer>
     </main>

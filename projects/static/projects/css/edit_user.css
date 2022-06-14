@@ -268,7 +268,7 @@ main header .right form input[type="submit"]:hover {
 main #hero {
   width: 100%;
   height: 100%;
-  padding: 5% 0;
+  padding: 5% 15% 7% 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -280,115 +280,11 @@ main #hero {
           justify-content: space-between;
 }
 
-main #hero .left {
-  width: 60%;
-  padding: 0 5%;
-  border-right: 0.2vw solid #28292c;
-}
-
-main #hero .left .project-image {
+main #hero .add-form {
   width: 100%;
-  padding-top: 2%;
-  border-radius: 0.3vw;
-}
-
-main #hero .left .project-image img {
-  width: 100%;
-  border-radius: 0.3vw;
-}
-
-main #hero .left .user-details {
-  width: 100%;
-  margin: 3% 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main #hero .left .user-details p {
-  font-size: 1vw;
-  color: #dcdddd;
-}
-
-main #hero .left .user-details p a {
-  display: inline-block;
-  text-decoration: none;
-  color: #009ff6;
-}
-
-main #hero .left .user-details p a:hover {
-  -webkit-animation: shake 0.3s;
-          animation: shake 0.3s;
-}
-
-main #hero .left .cta {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main #hero .left .cta a {
-  margin: 0 2%;
-  padding: 1.5% 4%;
-  text-decoration: none;
-  color: #dcdddd;
-  background-color: #009ff6;
+  height: 100%;
+  padding: 5%;
   border: 0.1vw solid #009ff6;
-  font-size: 0.9vw;
-  border-radius: 0.3vw;
-  font-weight: 500;
-}
-
-main #hero .right {
-  width: 40%;
-  margin: 0 5%;
-}
-
-main #hero .right h2 {
-  font-size: 1.2vw;
-  color: #dcdddd;
-  margin-bottom: 10%;
-}
-
-main #hero .right h3 {
-  font-size: 1.2vw;
-  color: #dcdddd;
-  margin-bottom: 3%;
-}
-
-main #hero .right p {
-  color: #dcdddd;
-  margin-bottom: 5%;
-  font-size: 0.9vw;
-  line-height: 1.7vw;
-}
-
-main #hero .right .rate .ratings {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-main #hero .right .rate .ratings .rating {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -399,52 +295,19 @@ main #hero .right .rate .ratings .rating {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-main #hero .right .rate .ratings .rating .score {
-  width: 5vw;
-  height: 5vw;
-  border: 0.2vw solid #009ff6;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 5%;
-}
-
-main #hero .right .rate .ratings .rating .score p {
-  color: #dcdddd;
+main #hero .add-form h3 {
+  color: #009ff6;
   font-size: 1.5vw;
-  font-weight: 500;
-}
-
-main #hero .right .rate .ratings .rating p {
-  margin: 5% 0;
-  color: #dcdddd;
-  font-size: 1vw;
-  text-align: center;
-}
-
-main #hero .right .rate .user_rating {
-  width: 100%;
-}
-
-main #hero .right .rate .user_rating h3 {
-  font-size: 1.2vw;
   margin-bottom: 5%;
 }
 
-main #hero .right .rate .user_rating form {
-  width: 100%;
+main #hero .add-form form {
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -458,76 +321,66 @@ main #hero .right .rate .user_rating form {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-}
-
-main #hero .right .rate .user_rating form .all {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-main #hero .right .rate .user_rating form .all .item {
-  width: 25%;
-}
-
-main #hero .right .rate .user_rating form .all .item .label {
   color: #dcdddd;
-  margin-right: 2%;
-  font-size: 0.9vw;
-  margin-bottom: 10%;
+  font-size: 0.8vw;
 }
 
-main #hero .right .rate .user_rating form .all .item input {
-  width: 50%;
-  padding: 5% 5% 5% 10%;
-  border-radius: 0.4vw;
+main #hero .add-form form input {
+  width: 100%;
+  color: #dcdddd;
+  font-size: 0.9vw;
+  background-color: transparent;
   outline: none;
   border: none;
+  border-bottom: 0.1vw solid #009ff6;
+  padding: 2%;
+  margin-bottom: 7%;
+}
+
+main #hero .add-form form input[type="submit"] {
+  background-color: #009ff6;
+  color: #dcdddd;
+  outline: none;
   border: 0.1vw solid #009ff6;
+  padding: 3% 5%;
+  font-size: 0.9vw;
+  font-weight: 500;
+  border-radius: 0.3vw;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+main #hero .add-form form input[type="submit"]:hover {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  background-color: transparent;
+  color: #009ff6;
+}
+
+main #hero .add-form form textarea {
+  width: 100%;
+  margin: 5% 0;
   color: #dcdddd;
   background-color: transparent;
-  font-size: 0.85vw;
-}
-
-main #hero .right .rate .user_rating form input[type="submit"] {
-  margin-top: 7%;
-  padding: 1.5% 4%;
-  text-decoration: none;
-  color: #dcdddd;
-  background-color: #009ff6;
   border: 0.1vw solid #009ff6;
-  font-size: 0.9vw;
-  border-radius: 0.3vw;
-  font-weight: 500;
-  cursor: pointer;
+  font-size: 0.8vw;
+  padding: 2%;
+  height: 7vw;
 }
 
-main #hero .right .rate h3 {
-  color: #dcdddd;
-  margin-top: 10%;
-  font-size: 1.2vw;
-}
-
-main #hero .right .rate .single {
-  margin: 5% 0;
-}
-
-main #hero .right .rate .single .crit {
+main #hero .add-form form label {
   color: #009ff6;
-  font-weight: 500;
-  font-size: 1vw;
-  line-height: 1.7vw;
+  font-size: 0.9vw;
 }
 
-main #hero .right .rate .single p {
-  color: #dcdddd;
-  font-size: 0.9vw;
-  line-height: 1.5vw;
+main #hero .add-form form a {
+  text-decoration: none;
+  color: #009ff6;
 }
 
 footer {
-  margin-top: 5%;
+  margin-top: 3%;
   text-align: center;
   width: 100%;
   padding: 2% 7%;
@@ -535,11 +388,11 @@ footer {
 
 footer .container {
   border-top: 0.1vw solid #242528;
-  padding: 5% 0 0 0;
+  padding: 5% 0 3% 0;
 }
 
 footer .container p {
   color: #dcdddd;
   font-size: 0.9vw;
 }
-/*# sourceMappingURL=project.css.map */
+/*# sourceMappingURL=edit_user.css.map */

@@ -1,0 +1,247 @@
+@import "mixins";
+
+body {
+  background-color: $background_color;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 3% 5%;
+
+  // - - - - - header styling - - - - - - //
+  header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .logo {
+        width: 35%;
+        a {
+          text-decoration: none;
+          h1 {
+            font-size: 2vw;
+            color: $text_color;
+            span {
+              color: $primary_color;
+            }
+          }
+        }
+      }
+      .links {
+        width: 65%;
+        ul {
+          list-style: none;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          li {
+            margin: 0 5%;
+            a {
+              text-decoration: none;
+              color: $text_color;
+              font-size: 1vw;
+              &:hover {
+                color: $primary_color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 50%;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-start;
+      .avatar {
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .image {
+          width: 4vw;
+          height: 4vw;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          border-radius: 50%;
+          border: 0.2vw solid $primary_color;
+          padding: 1%;
+          margin-left: 5%;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+      .username {
+        width: 20%;
+        margin-left: 5%;
+        text-align: right;
+        p {
+          color: $text_color;
+          font-size: 1vw;
+          margin-bottom: 2%;
+          text-align: right;
+        }
+        a {
+          text-align: right;
+          display: inline-block;
+          text-decoration: none;
+          color: $primary_color;
+          font-size: 0.9vw;
+          &:hover {
+            animation: shake 0.3s;
+          }
+        }
+      }
+      form {
+        width: 65%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        input[type="text"] {
+          width: 60%;
+          padding: 2% 4%;
+          outline: none;
+          border-width: 0.1vw 0 0.1vw 0.1vw;
+          border-style: solid;
+          border-color: $primary_color;
+          background-color: transparent;
+          color: $text_color;
+          border-radius: 0.3vw 0 0 0.3vw;
+          font-size: 0.9vw;
+        }
+        input[type="submit"] {
+          width: 20%;
+          padding: 2%;
+          outline: none;
+          border: 0.1vw solid $primary_color;
+          background-color: transparent;
+          color: $text_color;
+          border-radius: 0 0.3vw 0.3vw 0;
+          font-size: 0.9vw;
+          cursor: pointer;
+          &:hover {
+            background-color: $primary_color;
+          }
+        }
+      }
+    }
+  }
+
+  // - - - - - hero section styling - - - - - //
+
+  #hero {
+    width: 100%;
+    height: 100%;
+    padding: 5% 15% 7% 15%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .add-form {
+      width: 100%;
+      height: 100%;
+      padding: 5%;
+      border: 0.1vw solid $primary_color;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      h3 {
+        color: $primary_color;
+        font-size: 1.5vw;
+        margin-bottom: 5%;
+      }
+      form {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        color: $text_color;
+        font-size: 0.8vw;
+        input {
+          width: 100%;
+          color: $text_color;
+          font-size: 0.9vw;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          border-bottom: 0.1vw solid $primary_color;
+          padding: 2%;
+          margin-bottom: 7%;
+        }
+        input[type="submit"] {
+          background-color: $primary_color;
+          color: $text_color;
+          outline: none;
+          border: 0.1vw solid $primary_color;
+          padding: 3% 5%;
+          font-size: 0.9vw;
+          font-weight: 500;
+          border-radius: 0.3vw;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+          &:hover {
+            transition: 0.3s ease-in-out;
+            background-color: transparent;
+            color: $primary_color;
+          }
+        }
+        textarea {
+          width: 100%;
+          margin: 5% 0;
+          color: $text_color;
+          background-color: transparent;
+          border: 0.1vw solid $primary_color;
+          font-size: 0.8vw;
+          padding: 2%;
+          height: 7vw;
+        }
+
+        label {
+          color: $primary_color;
+          font-size: 0.9vw;
+        }
+
+        a {
+          text-decoration: none;
+          color: $primary_color;
+        }
+      }
+    }
+  }
+}
+
+// - - - - - footer styling - - - - - //
+footer {
+  margin-top: 3%;
+  text-align: center;
+  width: 100%;
+  padding: 2% 7%;
+
+  .container {
+    border-top: 0.1vw solid $tags_color;
+    padding: 5% 0 3% 0;
+    p {
+      color: $text_color;
+      font-size: 0.9vw;
+    }
+  }
+}
