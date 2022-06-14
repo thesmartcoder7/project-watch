@@ -56,15 +56,6 @@
           <div class="project-image">
             <img src="{% static 'projects/images/sample.png' %}" alt="" />
           </div>
-          <div class="user-details">
-            <p>By: <a href="">Username</a></p>
-          </div>
-          <div class="cta">
-            <a href="">Visit Project</a>
-            <a href="">Visit Live</a>
-          </div>
-        </div>
-        <div class="right">
           <div class="description">
             <h3>Description . . .</h3>
             <p>
@@ -74,6 +65,11 @@
               architecto, perferendis inventore mollitia dolorem est quod?
             </p>
           </div>
+          <div class="user-details">
+            <p>By: <a href="">Username</a> | Visit Live: <a href="">Here</a></p>
+          </div>
+        </div>
+        <div class="right">
           <h2>User Rating . . .</h2>
           <div class="rate">
             <div class="ratings">
@@ -122,6 +118,14 @@
                   </div>
                 </div>
                 <input type="submit" value="Rate" />
+                <br />
+                {% if messages %}
+                <!--  -->
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+                <!--  -->
+                {% endif %}
               </form>
             </div>
           </div>

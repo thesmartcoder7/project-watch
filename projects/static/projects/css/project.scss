@@ -167,6 +167,17 @@ main {
           border-radius: 0.3vw;
         }
       }
+      h3 {
+        font-size: 1.2vw;
+        color: $text_color;
+        margin: 3% 0;
+      }
+      p {
+        color: $text_color;
+        margin-bottom: 5%;
+        font-size: 0.9vw;
+        line-height: 1.7vw;
+      }
       .user-details {
         width: 100%;
         margin: 3% 0;
@@ -212,17 +223,6 @@ main {
         font-size: 1.2vw;
         color: $text_color;
         margin-bottom: 10%;
-      }
-      h3 {
-        font-size: 1.2vw;
-        color: $text_color;
-        margin-bottom: 3%;
-      }
-      p {
-        color: $text_color;
-        margin-bottom: 5%;
-        font-size: 0.9vw;
-        line-height: 1.7vw;
       }
       .rate {
         .ratings {

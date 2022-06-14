@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .forms import *
 from users.forms import *
 from datetime import date
+from django.contrib import messages
 
 
 # Create your views here.
@@ -22,13 +23,14 @@ def profile(request):
 @login_required
 def project(request, project_id):
     project = Project.objects.get(id=project_id)
-    r_form = RatingForm()
+    r_form = RatingForm(request.POST)
     context = {
         'r_form': r_form,
-        'year': date.today().year
+        'year': date.today().year,
     }
     if request.method == 'POST':
         if r_form.is_valid():
+            print('\n form is validated \n')
             rating = Rating.objects.create(
                 design=request.POST.get('design'), 
                 usability=request.POST.get('usability'), 
@@ -37,15 +39,19 @@ def project(request, project_id):
                 project=project
             )
             rating.save()
+            messages.success(request, "Thank you for the rating!")
             return redirect('projects-project', project_id)
         else:
+            print('\n form not validated \n')
+            messages.error(request, "Kindly fill in all the fields!")
             return render(request, 'projects/project.html', context )
     else:
-        r_form = RatingForm()
+        r_form = RatingForm(request.POST)
         context = {
             'r_form': r_form,
             'year': date.today().year
         }
+        print('\n form did not send a post request\n')
         return render(request, 'projects/project.html', context)
 
 

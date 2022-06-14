@@ -297,6 +297,19 @@ main #hero .left .project-image img {
   border-radius: 0.3vw;
 }
 
+main #hero .left h3 {
+  font-size: 1.2vw;
+  color: #dcdddd;
+  margin: 3% 0;
+}
+
+main #hero .left p {
+  color: #dcdddd;
+  margin-bottom: 5%;
+  font-size: 0.9vw;
+  line-height: 1.7vw;
+}
+
 main #hero .left .user-details {
   width: 100%;
   margin: 3% 0;
@@ -361,19 +374,6 @@ main #hero .right h2 {
   font-size: 1.2vw;
   color: #dcdddd;
   margin-bottom: 10%;
-}
-
-main #hero .right h3 {
-  font-size: 1.2vw;
-  color: #dcdddd;
-  margin-bottom: 3%;
-}
-
-main #hero .right p {
-  color: #dcdddd;
-  margin-bottom: 5%;
-  font-size: 0.9vw;
-  line-height: 1.7vw;
 }
 
 main #hero .right .rate .ratings {
