@@ -51,7 +51,7 @@ main .left img {
 
 main .right {
   width: 50%;
-  padding: 3% 10%;
+  padding: 0 10%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,12 +60,17 @@ main .right {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: auto;
+}
+
+main .right::-webkit-scrollbar {
+  display: none;
 }
 
 main .right form {
@@ -94,6 +99,22 @@ main .right form h1 {
 
 main .right form label {
   width: 100%;
+  color: #dcdddd;
+  margin-bottom: 1%;
+  font-size: 0.9vw;
+}
+
+main .right form .helptext {
+  display: none;
+}
+
+main .right form #id_email {
+  margin-bottom: 10%;
+}
+
+main .right form ul {
+  width: 100%;
+  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,17 +128,16 @@ main .right form label {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin: 5% 0;
 }
 
-main .right form label span {
+main .right form ul li {
   width: 100%;
-  color: #dcdddd;
-  margin-bottom: 1%;
+  color: #009ff6;
+  margin: 1% 0;
   font-size: 0.9vw;
 }
 
-main .right form label input {
+main .right form input {
   width: 100%;
   color: #dcdddd;
   font-size: 0.9vw;
@@ -126,6 +146,7 @@ main .right form label input {
   border: none;
   border-bottom: 0.1vw solid #009ff6;
   padding: 2%;
+  margin-bottom: 5%;
 }
 
 main .right form input[type="submit"] {

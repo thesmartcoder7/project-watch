@@ -21,23 +21,28 @@
         <img src="{% static 'users/images/developer.svg' %}" alt="developer" />
       </div>
       <div class="right">
-        <form>
+        <form method="post">
           {% csrf_token %}
           <!--  -->
           {% block form %}
           <h1>Sign Up</h1>
-          <label for="username">
-            <span>Username</span>
-            <input type="text" id="username" name="username" />
+          {{form}}
+          <!-- <label for="username">
+            <span>{{form.username.label}}</span>
+            {{form.username}}
           </label>
           <label for="email">
-            <span>Email</span>
-            <input type="email" name="email" id="email" />
+            <span>{{form.email.label}}</span>
+            {{form.email}}
           </label>
-          <label for="pasword">
-            <span>Password</span>
-            <input type="password" name="password" id="password" />
+          <label for="password1">
+            <span>{{form.password1.label}}</span>
+            {{form.password1}}
           </label>
+          <label for="password1">
+            <span>{{form.password2.label}}</span>
+            {{form.password2}}
+          </label> -->
           <input type="submit" value="Submit" />
           {% endblock %}
         </form>
