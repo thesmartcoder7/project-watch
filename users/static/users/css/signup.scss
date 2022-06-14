@@ -86,7 +86,7 @@ main {
         border: none;
         border-bottom: 0.1vw solid $primary_color;
         padding: 2%;
-        margin-bottom: 5%;
+        margin-bottom: 7%;
       }
       input[type="submit"] {
         background-color: $primary_color;
@@ -104,6 +104,18 @@ main {
           transition: 0.3s ease-in-out;
           background-color: transparent;
           color: $primary_color;
+        }
+      }
+      p {
+        color: $text_color;
+        font-size: 0.9vw;
+        a {
+          text-decoration: none;
+          color: $primary_color;
+          &:hover {
+            position: inline-block;
+            animation: shake 0.3s;
+          }
         }
       }
     }
