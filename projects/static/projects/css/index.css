@@ -315,11 +315,15 @@ main #hero .left .top-rated h3 {
 main #hero .left .project-image {
   width: 100%;
   border-radius: 0.3vw;
+  border: 0.1vw solid #009ff6;
 }
 
 main #hero .left .project-image img {
   width: 100%;
+  height: 100%;
   border-radius: 0.3vw;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 main #hero .left .user-details {
@@ -339,6 +343,7 @@ main #hero .left .user-details {
 main #hero .left .user-details p {
   font-size: 1vw;
   color: #dcdddd;
+  text-transform: capitalize;
 }
 
 main #hero .left .user-details p a {
@@ -670,7 +675,10 @@ main #latest .all-projects .project .image {
 
 main #latest .all-projects .project .image img {
   width: 100%;
+  height: 100%;
   border-radius: 0.5vw;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 main #latest .all-projects .project .cta {

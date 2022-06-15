@@ -10,18 +10,65 @@ from datetime import date
 from django.contrib import messages
 
 
+def get_averages(project):
+    project_rating = Rating.objects.filter(project=project)
+    design = []
+    usability = []
+    content = []
+    for rating in project_rating:
+        design.append(rating.design)
+        usability.append(rating.usability)
+        content.append(rating.content)
+
+    if sum(design) == 0 and len(design) == 0:
+        average_design = 0
+    else:
+        average_design = round(sum(design)/len(design))
+    
+    if sum(usability) == 0 and len(design) == 0:
+        average_usability = 0
+    else:
+        average_usability = round(sum(usability)/len(usability))
+
+    if sum(content) == 0 and len(content) == 0:
+        average_content = 0
+    else:
+        average_content = round(sum(content)/len(content))
+    average_score = 0
+    if average_design == 0 and average_content == 0 and average_usability == 0:
+        average_score = 0
+    else:
+        average_score = round((average_design + average_usability + average_content)/3)
+
+    return [average_design, average_usability, average_content, average_score]
+
+
+def get_top():
+    highest = None
+    max = 0
+    projects = Project.objects.all()
+    for project in projects:
+        if get_averages(project)[3] > max:
+            highest = project
+    
+    return highest
+
+
 # Create your views here.
 @login_required
 def home (request):
     users = User.objects.all()
     projects = Project.objects.all()
     current_user = User.objects.get(username=request.user.username)
-    top_rated = None
+    top_rated = get_top()
 
     context = {
         'users':users,
         'projects':projects,
-        'current_user': current_user
+        'current_user': current_user,
+        'top_rated': top_rated,
+        'averages': get_averages(top_rated),
+        'year': date.today().year,
     }
 
     return render(request, 'projects/index.html', context)
@@ -56,15 +103,27 @@ def project(request, project_id):
         usability.append(rating.usability)
         content.append(rating.content)
 
-   
+    if sum(design) == 0 and len(design) == 0:
+        average_design = 0
+    else:
+        average_design = round(sum(design)/len(design))
+    
+    if sum(usability) == 0 and len(design) == 0:
+        average_usability = 0
+    else:
+        average_usability = round(sum(usability)/len(usability))
 
-    average_design = round(sum(design)/len(design))
-    average_usability = round(sum(usability)/len(usability))
-    average_content = round(sum(content)/len(content))
-    average_score = round((average_design + average_usability + average_content)/3)
+    if sum(content) == 0 and len(content) == 0:
+        average_content = 0
+    else:
+        average_content = round(sum(content)/len(content))
+    average_score = 0
+    if average_design == 0 and average_content == 0 and average_usability == 0:
+        average_score = 0
+    else:
+        average_score = round((average_design + average_usability + average_content)/3)
 
 
-    print(average_design)
     
     r_form = RatingForm(request.POST)
     context = {
@@ -79,7 +138,6 @@ def project(request, project_id):
     }
     if request.method == 'POST':
         if r_form.is_valid():
-            print('\n form is validated \n')
             rating = Rating.objects.create(
                 design=request.POST.get('design'), 
                 usability=request.POST.get('usability'), 
@@ -91,7 +149,6 @@ def project(request, project_id):
             messages.success(request, "Thank you for the rating!")
             return redirect('projects-project', project_id)
         else:
-            print('\n form not validated \n')
             messages.error(request, "Kindly fill in all the fields!")
             return render(request, 'projects/project.html', context )
     else:
@@ -106,7 +163,6 @@ def project(request, project_id):
             'average_content': average_content, 
             'average_score': average_score
         }
-        print('\n form did not send a post request\n')
         return render(request, 'projects/project.html', context)
 
 
@@ -182,7 +238,6 @@ def add_project(request):
     if request.method == 'POST':
         add_form = NewProjectForm(request.POST, request.FILES,)
         if add_form.is_valid():
-            print('\n form is validated \n')
             project = Project.objects.create(
                 user=user, image=request.FILES.get('image'), 
                 title=request.POST.get('title'), link=request.POST.get('link'), 
@@ -191,11 +246,9 @@ def add_project(request):
             project.save()
             return redirect('projects-user')
         else:
-            print('\n form not validated \n')
             add_form = NewProjectForm(request.POST)
             return render(request, 'projects/add_project.html', context)
     
-    print('\n form did not send a post request\n')
     return render(request, 'projects/add_project.html', context)
 
 
@@ -215,7 +268,6 @@ def edit_project(request, project_id):
     if request.method == 'POST':
         add_form = NewProjectForm(request.POST, request.FILES, instance=project)
         if add_form.is_valid():
-            print('\n form is validated \n')
             project.user = user
             project.image = request.FILES.get('image')
             project.title = request.POST.get('title')
@@ -224,11 +276,9 @@ def edit_project(request, project_id):
             project.save()
             return redirect('projects-user')
         else:
-            print('\n form not validated \n')
             add_form = NewProjectForm(request.POST, request.FILES, instance=project)
             return render(request, 'projects/edit_project.html', context)
     
-    print('\n form did not send a post request\n')
     return render(request, 'projects/edit_project.html', context)
 
 

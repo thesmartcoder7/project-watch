@@ -178,9 +178,13 @@ main {
       .project-image {
         width: 100%;
         border-radius: 0.3vw;
+        border: 0.1vw solid $primary_color;
+
         img {
           width: 100%;
+          height: 100%;
           border-radius: 0.3vw;
+          object-fit: cover;
         }
       }
       .user-details {
@@ -192,6 +196,7 @@ main {
         p {
           font-size: 1vw;
           color: $text_color;
+          text-transform: capitalize;
           a {
             display: inline-block;
             text-decoration: none;
@@ -420,7 +425,9 @@ main {
           border: 0.1vw solid $primary_color;
           img {
             width: 100%;
+            height: 100%;
             border-radius: 0.5vw;
+            object-fit: cover;
           }
         }
         .cta {

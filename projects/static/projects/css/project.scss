@@ -160,12 +160,17 @@ main {
       border-right: 0.2vw solid #28292c;
       .project-image {
         width: 100%;
-        padding-top: 2%;
         border-radius: 0.3vw;
         border: 0.1vw solid $primary_color;
+        object-fit: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
           width: 100%;
+          height: 100%;
           border-radius: 0.3vw;
+          object-fit: cover;
         }
       }
       h3 {
@@ -195,7 +200,7 @@ main {
             text-decoration: none;
             text-transform: capitalize;
             color: $primary_color;
-           
+
             &:hover {
               animation: shake 0.3s;
             }
@@ -309,6 +314,11 @@ main {
               border-radius: 0.3vw;
               font-weight: 500;
               cursor: pointer;
+            }
+            p {
+              color: $text_color;
+              font-size: 0.9vw;
+              line-height: 1.5vw;
             }
           }
         }

@@ -65,14 +65,21 @@
             <h3>Top Rated</h3>
           </div>
           <div class="project-image">
-            <img src="{% static 'projects/images/sample.png' %}" alt="" />
+            <img src="{{top_rated.image.url}}" alt="{{top_rated.title}}" />
           </div>
           <div class="user-details">
-            <p>By: <a href="">Samuel Martins</a></p>
+            <p>
+              By:
+              <a href="{% url 'projects-profile' top_rated.user.username  %}"
+                >{{top_rated.user.username}}</a
+              >
+            </p>
           </div>
           <div class="cta">
-            <a href="">Visit Project</a>
-            <a href="">Visit Live</a>
+            <a href="{% url 'projects-project' top_rated.id %}"
+              >Visit Project</a
+            >
+            <a href="{{top_rated.link}}">Visit Live</a>
           </div>
         </div>
         <div class="right">
@@ -81,25 +88,25 @@
             <div class="ratings">
               <div class="rating">
                 <div class="score">
-                  <p>10</p>
+                  <p>{{averages.0}}</p>
                 </div>
                 <p>Design</p>
               </div>
               <div class="rating">
                 <div class="score">
-                  <p>9</p>
+                  <p>{{averages.1}}</p>
                 </div>
                 <p>Usability</p>
               </div>
               <div class="rating">
                 <div class="score">
-                  <p>9</p>
+                  <p>{{averages.2}}</p>
                 </div>
                 <p>Content</p>
               </div>
               <div class="rating">
                 <div class="score">
-                  <p>9.3</p>
+                  <p>{{averages.3}}</p>
                 </div>
                 <p>Average</p>
               </div>
@@ -194,7 +201,7 @@
       </section>
       <footer>
         <div class="container">
-          <p>All Rights Reserved | <span class="current-year"></span></p>
+          <p>All Rights Reserved | <span class="current-year">{{year}}</span></p>
         </div>
       </footer>
     </main>

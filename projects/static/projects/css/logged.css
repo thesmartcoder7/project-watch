@@ -201,6 +201,7 @@ main header .right .username {
   width: 20%;
   margin-left: 5%;
   text-align: right;
+  text-transform: capitalize;
 }
 
 main header .right .username p {
