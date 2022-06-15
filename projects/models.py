@@ -14,6 +14,20 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
+    def save_project(self):
+        self.save()
+
+    def update_project(self, user, title , image, description, link):
+        self.user = user
+        self.title = title
+        self.image = image
+        self.description = description
+        self.link = link
+        self.save()
+
+    def delete_project(self):
+        self.delete()
+
 
 
 class Rating(models.Model):
@@ -25,3 +39,19 @@ class Rating(models.Model):
 
     def __str__(self):
         return f"{self.project.title}'s Rating"
+
+    def save_rating(self):
+        self.save()
+
+
+    def update_rating(self, user, project, design, usability, content):
+        self.user = user
+        self.project = project
+        self.design = design
+        self.usability = usability
+        self.content = content
+        self.save()
+
+    
+    def delete_rating(self):
+        self.delete()

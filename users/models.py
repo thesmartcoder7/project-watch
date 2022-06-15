@@ -1,3 +1,4 @@
+from turtle import goto
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -15,3 +16,19 @@ class Profile(models.Model):
         return f"{self.user.username}'s Profile"
 
 
+    def save_profile(self):
+        self.save()
+
+
+    def update_profile(self, user, image, work_title, bio, github, linkedin, twitter):
+        self.user = user
+        self.image = image
+        self.work_title = work_title
+        self.bio = bio
+        self.github = github
+        self.linkedin = linkedin
+        self.twitter = twitter
+        self.save()
+
+    def delete_profile(self):
+        self.delete()
