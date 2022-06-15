@@ -127,14 +127,18 @@
         <div class="all-projects">
           {% if user_projects %}
           <!--  -->
-          {% for projects in user_projects %}
+          {% for project in user_projects %}
           <div class="project">
             <div class="image">
-              <img src="{{project.image.url}}" alt="projet-title" />
+              <img src="{{project.image.url}}" alt="{{project.title}}" />
             </div>
             <div class="cta">
               <h3>{{project.title}}</h3>
-              <a href="{{project.link}}">Visit Project</a>
+              <div>
+                <a href="">Edit</a>
+                <hr />
+                <a href="">Delete</a>
+              </div>
             </div>
           </div>
           {% endfor %}

@@ -665,6 +665,7 @@ main #latest .all-projects .project {
 main #latest .all-projects .project .image {
   width: 100%;
   border-radius: 0.5vw;
+  border: 0.1vw solid #009ff6;
 }
 
 main #latest .all-projects .project .image img {

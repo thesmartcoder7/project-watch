@@ -33,14 +33,15 @@
         <div class="right">
           <div class="avatar">
             <div class="image">
-              <img
-                src="{% static 'projects/images/sam.jpeg' %}"
-                alt="user-image"
-              />
+              <img src="{{current_user.profile.image.url}}" alt="user-image" />
             </div>
           </div>
           <div class="username">
-            <p>Username</p>
+            {% if current_user.first_name and current_user.last_name%}
+            <p>{{current_user.first_name}} {{current_user.last_name}}</p>
+            {% else %}
+            <p>{{current_user.username}}</p>
+            {% endif %}
             <a href="{% url 'users-signout' %}">Sign Out</a>
           </div>
           <form action="{% url 'projects-search' %}" method="post">
@@ -55,19 +56,18 @@
       <section id="hero">
         <div class="left">
           <div class="project-image">
-            <img src="{% static 'projects/images/sample.png' %}" alt="" />
+            <img src="{{project.image.url}}" alt="{{project.title}}" />
           </div>
           <div class="description">
             <h3>Description . . .</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consectetur nobis distinctio aliquam doloremque! Rerum, quasi
-              facere? Numquam repellat hic, quibusdam sed velit ipsum
-              architecto, perferendis inventore mollitia dolorem est quod?
-            </p>
+            <p>{{project.description}}</p>
           </div>
           <div class="user-details">
-            <p>By: <a href="">Username</a> | Visit Live: <a href="">Here</a></p>
+            <p>
+              By: <a href="" class="username">{{project.user.username}}</a> |
+              Visit Live:
+              <a href="{{project.link}}">Here</a>
+            </p>
           </div>
         </div>
         <div class="right">

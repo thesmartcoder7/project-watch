@@ -162,6 +162,7 @@ main {
         width: 100%;
         padding-top: 2%;
         border-radius: 0.3vw;
+        border: 0.1vw solid $primary_color;
         img {
           width: 100%;
           border-radius: 0.3vw;
@@ -184,13 +185,17 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
+
         p {
           font-size: 1vw;
           color: $text_color;
+          text-transform: capitalize;
           a {
             display: inline-block;
             text-decoration: none;
+            text-transform: capitalize;
             color: $primary_color;
+           
             &:hover {
               animation: shake 0.3s;
             }

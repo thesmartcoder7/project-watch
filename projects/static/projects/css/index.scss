@@ -417,6 +417,7 @@ main {
         .image {
           width: 100%;
           border-radius: 0.5vw;
+          border: 0.1vw solid $primary_color;
           img {
             width: 100%;
             border-radius: 0.5vw;

@@ -47,8 +47,11 @@ def profile(request, username):
 @login_required
 def project(request, project_id):
     project = Project.objects.get(id=project_id)
+    current_user = User.objects.get(username=request.user.username)
     r_form = RatingForm(request.POST)
     context = {
+        'current_user': current_user,
+        'project': project,
         'r_form': r_form,
         'year': date.today().year,
     }
@@ -72,8 +75,10 @@ def project(request, project_id):
     else:
         r_form = RatingForm(request.POST)
         context = {
+            'current_user': current_user,
+            'project': project,
             'r_form': r_form,
-            'year': date.today().year
+            'year': date.today().year,
         }
         print('\n form did not send a post request\n')
         return render(request, 'projects/project.html', context)

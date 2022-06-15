@@ -290,6 +290,7 @@ main #hero .left .project-image {
   width: 100%;
   padding-top: 2%;
   border-radius: 0.3vw;
+  border: 0.1vw solid #009ff6;
 }
 
 main #hero .left .project-image img {
@@ -327,11 +328,13 @@ main #hero .left .user-details {
 main #hero .left .user-details p {
   font-size: 1vw;
   color: #dcdddd;
+  text-transform: capitalize;
 }
 
 main #hero .left .user-details p a {
   display: inline-block;
   text-decoration: none;
+  text-transform: capitalize;
   color: #009ff6;
 }
 
