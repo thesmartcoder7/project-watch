@@ -133,3 +133,35 @@ def add_project(request):
     
     print('\n form did not send a post request\n')
     return render(request, 'projects/add_project.html', context)
+
+
+
+@login_required
+def edit_project(request, project_id):
+    project = Project.objects.get(id=project_id)
+    add_form = NewProjectForm(instance=project)
+    
+    context = { 
+        'add_form': add_form,
+        'year': date.today().year
+    }
+
+    user = User.objects.get(username=request.user.username)
+    if request.method == 'POST':
+        add_form = NewProjectForm(request.POST, request.FILES, instance=project)
+        if add_form.is_valid():
+            print('\n form is validated \n')
+            project = Project.objects.create(
+                user=user, image=request.FILES.get('image'), 
+                title=request.POST.get('title'), link=request.POST.get('link'), 
+                description=request.POST.get('description')
+            )
+            project.save()
+            return redirect('projects-user')
+        else:
+            print('\n form not validated \n')
+            add_form = NewProjectForm(request.POST, request.FILES, instance=project)
+            return render(request, 'projects/edit_project.html', context)
+    
+    print('\n form did not send a post request\n')
+    return render(request, 'projects/edit_project.html', context)
