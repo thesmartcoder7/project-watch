@@ -1,4 +1,5 @@
 
+from multiprocessing import context
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -97,10 +98,15 @@ def logged_user(request):
 @login_required
 def search(request):
     if request.method == 'POST':
+        current_user = User.objects.get(username=request.user.username)
         search_term = request.POST.get('search')
         projects = Project.objects.filter(title__icontains=search_term)
-
-        return render(request, 'projects/search.html', {'projects': projects})
+        context = {
+            'current_user': current_user,
+            'projects': projects,
+            'year': date.today().year
+        }
+        return render(request, 'projects/search.html', context)
     else:
         return redirect('projects-home')
 
