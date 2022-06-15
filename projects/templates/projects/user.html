@@ -135,9 +135,9 @@
             <div class="cta">
               <h3>{{project.title}}</h3>
               <div>
-                <a href="">Edit</a>
+                <a href="{% url 'projects-edit-project' project.id %}">Edit</a>
                 <hr />
-                <a href="">Delete</a>
+                <a href="{% url 'projects-delete' project.id %}">Delete</a>
               </div>
             </div>
           </div>
