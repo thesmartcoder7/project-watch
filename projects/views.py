@@ -1,9 +1,8 @@
 
-from multiprocessing import context
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+import math
 
 from .forms import *
 from users.forms import *
@@ -48,12 +47,35 @@ def profile(request, username):
 def project(request, project_id):
     project = Project.objects.get(id=project_id)
     current_user = User.objects.get(username=request.user.username)
+    project_rating = Rating.objects.filter(project=project)
+    design = []
+    usability = []
+    content = []
+    for rating in project_rating:
+        design.append(rating.design)
+        usability.append(rating.usability)
+        content.append(rating.content)
+
+   
+
+    average_design = round(sum(design)/len(design))
+    average_usability = round(sum(usability)/len(usability))
+    average_content = round(sum(content)/len(content))
+    average_score = round((average_design + average_usability + average_content)/3)
+
+
+    print(average_design)
+    
     r_form = RatingForm(request.POST)
     context = {
         'current_user': current_user,
         'project': project,
         'r_form': r_form,
         'year': date.today().year,
+        'average_design': average_design,
+        'average_usability': average_usability,
+        'average_content': average_content, 
+        'average_score': average_score
     }
     if request.method == 'POST':
         if r_form.is_valid():
@@ -79,6 +101,10 @@ def project(request, project_id):
             'project': project,
             'r_form': r_form,
             'year': date.today().year,
+            'average_design': average_design,
+            'average_usability': average_usability,
+            'average_content': average_content, 
+            'average_score': average_score
         }
         print('\n form did not send a post request\n')
         return render(request, 'projects/project.html', context)

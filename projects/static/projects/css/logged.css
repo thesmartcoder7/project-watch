@@ -268,6 +268,8 @@ main header .right .add a span {
   color: #dcdddd;
   border-radius: 50%;
   font-size: 1.5vw;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 main header .right .add a p {
