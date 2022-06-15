@@ -201,6 +201,7 @@ main header .right .username {
   width: 20%;
   margin-left: 5%;
   text-align: right;
+  text-transform: capitalize;
 }
 
 main header .right .username p {
@@ -433,6 +434,11 @@ main #latest .all-projects {
           justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+main #latest .all-projects p {
+  font-size: 0.9vw;
+  color: #dcdddd;
 }
 
 main #latest .all-projects .project {

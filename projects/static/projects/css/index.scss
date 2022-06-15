@@ -98,6 +98,7 @@ main {
           font-size: 1vw;
           margin-bottom: 2%;
           text-align: right;
+          text-transform: capitalize;
         }
         a {
           text-align: right;
@@ -299,6 +300,7 @@ main {
         color: $text_color;
         font-size: 1.2vw;
         margin-right: 2%;
+        text-transform: capitalize;
       }
       hr {
         outline: none;
@@ -351,6 +353,7 @@ main {
             font-size: 1vw;
             color: $primary_color;
             text-decoration: none;
+            text-transform: capitalize;
             &:hover {
               color: $text_color;
             }
@@ -359,6 +362,7 @@ main {
             margin-top: 2%;
             font-size: 0.9vw;
             color: $text_color;
+            text-transform: capitalize;
           }
         }
       }
@@ -370,6 +374,10 @@ main {
     width: 100%;
     padding: 5%;
     margin-bottom: 5%;
+    p {
+      color: $text_color;
+      font-size: 0.9vw;
+    }
     .heading {
       width: 100%;
       display: flex;

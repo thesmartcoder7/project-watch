@@ -335,6 +335,7 @@ main #hero .left .user .details {
   border-radius: 0.5vw;
   margin-top: -2%;
   background-color: #242528;
+  text-transform: capitalize;
 }
 
 main #hero .left .user .details a {
@@ -458,6 +459,11 @@ main #latest .all-projects {
           justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+main #latest .all-projects p {
+  font-size: 0.9vw;
+  color: #dcdddd;
 }
 
 main #latest .all-projects .project {

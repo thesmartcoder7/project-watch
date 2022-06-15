@@ -208,6 +208,7 @@ main header .right .username p {
   font-size: 1vw;
   margin-bottom: 2%;
   text-align: right;
+  text-transform: capitalize;
 }
 
 main header .right .username a {
@@ -492,6 +493,7 @@ main #users .heading h3 {
   color: #dcdddd;
   font-size: 1.2vw;
   margin-right: 2%;
+  text-transform: capitalize;
 }
 
 main #users .heading hr {
@@ -572,6 +574,7 @@ main #users .all-users .user .details a {
   font-size: 1vw;
   color: #009ff6;
   text-decoration: none;
+  text-transform: capitalize;
 }
 
 main #users .all-users .user .details a:hover {
@@ -582,12 +585,18 @@ main #users .all-users .user .details p {
   margin-top: 2%;
   font-size: 0.9vw;
   color: #dcdddd;
+  text-transform: capitalize;
 }
 
 main #latest {
   width: 100%;
   padding: 5%;
   margin-bottom: 5%;
+}
+
+main #latest p {
+  color: #dcdddd;
+  font-size: 0.9vw;
 }
 
 main #latest .heading {

@@ -13,13 +13,33 @@ from django.contrib import messages
 # Create your views here.
 @login_required
 def home (request):
-    return render(request, 'projects/index.html')
+    users = User.objects.all()
+    projects = Project.objects.all()
+    current_user = User.objects.get(username=request.user.username)
+    top_rated = None
+
+    context = {
+        'users':users,
+        'projects':projects,
+        'current_user': current_user
+    }
+
+    return render(request, 'projects/index.html', context)
 
 
 
 @login_required
-def profile(request):
-    return render(request, 'projects/profile.html')
+def profile(request, username):
+    viewed_user = User.objects.get(username=username)
+    user_projects = Project.objects.filter(user=viewed_user)
+    current_user = User.objects.get(username=request.user.username)
+    context = {
+        'viewed_user': viewed_user,
+        'user_projects': user_projects,
+        'year': date.today().year,
+        'current_user': current_user
+    }
+    return render(request, 'projects/profile.html',  context)
 
 
 
@@ -62,7 +82,14 @@ def project(request, project_id):
 
 @login_required
 def logged_user(request):
-    return render(request, 'projects/user.html')
+    current_user = User.objects.get(username=request.user.username)
+    user_projects = Project.objects.filter(user=current_user)
+    context = {
+        'current_user':current_user,
+        'user_projects': user_projects,
+        'year': date.today().year
+    }
+    return render(request, 'projects/user.html',  context)
 
 
 

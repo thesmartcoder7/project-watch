@@ -34,13 +34,17 @@
           <div class="avatar">
             <div class="image">
               <img
-                src="{% static 'projects/images/sam.jpeg' %}"
-                alt="user-image"
+                src="{{current_user.profile.image.url}}"
+                alt="{{current_user.username}}"
               />
             </div>
           </div>
           <div class="username">
-            <p>Username</p>
+            {% if current_user.first_name and current_user.last_name%}
+            <p>{{current_user.first_name}} {{current_user.last_name}}</p>
+            {% else %}
+            <p>{{current_user.username}}</p>
+            {% endif %}
             <a href="{% url 'users-signout' %}">Sign Out</a>
           </div>
           <form action="{% url 'projects-search' %}" method="post">
@@ -56,27 +60,30 @@
         <div class="left">
           <div class="user">
             <div class="user-image">
-              <img src="{% static 'projects/images/sam.jpeg' %}" alt="" />
+              <img
+                src="{{viewed_user.profile.image.url}}"
+                alt="{{viewed_user.username}}"
+              />
             </div>
             <div class="details">
-              <a href="">Samuel Martins</a>
-              <p class="title">FullStack Developer</p>
+              {% if viewed_user.first_name and viewed_user.last_name%}
+              <a href=""
+                >{{viewed_user.first_name}} {{viewed_user.last_name}}</a
+              >
+              {% else %}
+              <a href="">{{viewed_user.username}}</a>
+              {% endif %}
+
+              <p class="title">{{viewed_user.profile.work_title}}</p>
             </div>
           </div>
         </div>
         <div class="right">
           <h2>Bio . . .</h2>
           <div class="bio">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-              placeat quaerat ut recusandae autem nobis repellendus expedita
-              labore laborum minima mollitia fugit cumque aut eum laboriosam
-              libero quia, animi facere eaque. Natus obcaecati distinctio velit
-              atque quas quidem? Iure rem consectetur dolor quasi repellat
-              consequuntur tempore omnis eaque reprehenderit alias!
-            </p>
+            <p>{{viewed_user.profile.bio}}</p>
             <div class="socials">
-              <a href="">
+              <a href="{{viewed_user.profile.twitter}}" target="_blank">
                 <svg aria-hidden="true" role="img" viewBox="0 0 20 20">
                   <path
                     fill="currentColor"
@@ -85,7 +92,7 @@
                 </svg>
               </a>
 
-              <a href="">
+              <a href="{{viewed_user.profile.github}}" target="_blank">
                 <svg aria-hidden="true" role="img" viewBox="0 0 24 24">
                   <path
                     fill="currentColor"
@@ -94,7 +101,7 @@
                 </svg>
               </a>
 
-              <a href="">
+              <a href="{{viewed_user.profile.linkedin}}" target="_blank">
                 <svg aria-hidden="true" role="img" viewBox="0 0 20 20">
                   <path
                     fill="currentColor"
@@ -110,98 +117,37 @@
       <!-- latest projects -->
       <section id="latest">
         <div class="heading">
-          <h3>Latest Uploads</h3>
+          <h3>{{viewed_user.username}}'s Projects</h3>
           <hr />
         </div>
         <div class="all-projects">
-          <!-- test project -->
+          {% if user_projects %}
+          <!--  -->
+          {% for projects in user_projects %}
           <div class="project">
             <div class="image">
-              <img
-                src="{% static 'projects/images/sample.png' %}"
-                alt="projet-title"
-              />
+              <img src="{{project.image.url}}" alt="projet-title" />
             </div>
             <div class="cta">
-              <h3>project title</h3>
-              <a href="">Visit Project</a>
+              <h3>{{project.title}}</h3>
+              <a href="{{project.link}}">Visit Project</a>
             </div>
           </div>
-
-          <!-- test project -->
-          <div class="project">
-            <div class="image">
-              <img
-                src="{% static 'projects/images/sample.png' %}"
-                alt="projet-title"
-              />
-            </div>
-            <div class="cta">
-              <h3>project title</h3>
-              <a href="">Visit Project</a>
-            </div>
+          {% endfor %}
+          <!--  -->
+          {% else %}
+          <div class="user">
+            <p>There are no projects at this time</p>
           </div>
-
-          <!-- test project -->
-          <div class="project">
-            <div class="image">
-              <img
-                src="{% static 'projects/images/sample.png' %}"
-                alt="projet-title"
-              />
-            </div>
-            <div class="cta">
-              <h3>project title</h3>
-              <a href="">Visit Project</a>
-            </div>
-          </div>
-
-          <!-- test project -->
-          <div class="project">
-            <div class="image">
-              <img
-                src="{% static 'projects/images/sample.png' %}"
-                alt="projet-title"
-              />
-            </div>
-            <div class="cta">
-              <h3>project title</h3>
-              <a href="">Visit Project</a>
-            </div>
-          </div>
-
-          <!-- test project -->
-          <div class="project">
-            <div class="image">
-              <img
-                src="{% static 'projects/images/sample.png' %}"
-                alt="projet-title"
-              />
-            </div>
-            <div class="cta">
-              <h3>project title</h3>
-              <a href="">Visit Project</a>
-            </div>
-          </div>
-
-          <!-- test project -->
-          <div class="project">
-            <div class="image">
-              <img
-                src="{% static 'projects/images/sample.png' %}"
-                alt="projet-title"
-              />
-            </div>
-            <div class="cta">
-              <h3>project title</h3>
-              <a href="">Visit Project</a>
-            </div>
-          </div>
+          <!--  -->
+          {% endif %}
         </div>
       </section>
       <footer>
         <div class="container">
-          <p>All Rights Reserved | <span class="current-year"></span></p>
+          <p>
+            All Rights Reserved | <span class="current-year">{{year}}</span>
+          </p>
         </div>
       </footer>
     </main>
