@@ -1,6 +1,9 @@
+
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+
+
 from .forms import *
 from users.forms import *
 from datetime import date
@@ -61,6 +64,18 @@ def project(request, project_id):
 def logged_user(request):
     return render(request, 'projects/user.html')
 
+
+
+
+@login_required
+def search(request):
+    if request.method == 'POST':
+        search_term = request.POST.get('search')
+        projects = Project.objects.filter(title__icontains=search_term)
+
+        return render(request, 'projects/search.html', {'projects': projects})
+    else:
+        return redirect('projects-home')
 
 
 @login_required

@@ -43,7 +43,8 @@
             <p>Username</p>
             <a href="{% url 'users-signout' %}">Sign Out</a>
           </div>
-          <form>
+          <form action="{% url 'projects-search' %}" method="post">
+            {% csrf_token %}
             <input type="text" name="search" id="search" />
             <input type="submit" value="Search" />
           </form>
