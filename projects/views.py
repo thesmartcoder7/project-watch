@@ -269,7 +269,8 @@ def edit_project(request, project_id):
         add_form = NewProjectForm(request.POST, request.FILES, instance=project)
         if add_form.is_valid():
             project.user = user
-            project.image = request.FILES.get('image')
+            if request.FILES.get('image'):
+                project.image = request.FILES.get('image')
             project.title = request.POST.get('title')
             project.link = request.POST.get('link')
             project.description = request.POST.get('description')
