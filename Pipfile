@@ -11,6 +11,7 @@ pillow = "*"
 whitenoise = "*"
 djangorestframework = "*"
 gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 
