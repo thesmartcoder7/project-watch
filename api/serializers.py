@@ -18,12 +18,9 @@ class ProfileSerializer(serializers.ModelSerializer):
             'twitter'
         ]
 
-        # read_only_fields = ('user',)
-        # depth = 1
 
 
 class UserSerializer(serializers.ModelSerializer):
-    # profile = ProfileSerializer(many=True)
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username', 'email', 'profile']
@@ -47,5 +44,6 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = '__all__'
+
 
 

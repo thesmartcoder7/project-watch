@@ -126,6 +126,20 @@ or
 $ python manage.py test
 ```
 
+## API Endpoints
+
+User Profiles:
+
+```
+https://project-re-views.herokuapp.com/api/profiles
+```
+
+All Projects:
+
+```
+https://project-re-views.herokuapp.com/api/projects
+```
+
 ## Technologies
 
 - HTML5
