@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
@@ -142,3 +143,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'users-signin'
 LOGIN_REDIRECT_URL = 'projects-user'
 LOGOUT_REDIRECT_URL = 'users-signin'
+
+django_heroku.settings(locals())
