@@ -33,7 +33,7 @@ class Project(models.Model):
 
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='rating')
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='rating')
     design = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
     usability = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
     content = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(10)])
