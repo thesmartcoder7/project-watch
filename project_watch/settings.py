@@ -89,7 +89,7 @@ DATABASES = {
     }
 }
 
-DATABASE_PORT = '5432'
+DATABASE_PORT = '5433'
 
 
 # Password validation
