@@ -50,6 +50,7 @@ def get_top():
     for project in projects:
         if get_averages(project)[3] > max:
             highest = project
+            max = get_averages(project)[3]
     
     return highest
 
