@@ -9,6 +9,7 @@ psycopg2 = "*"
 python-dotenv = "*"
 pillow = "*"
 whitenoise = "*"
+djangorestframework = "*"
 
 [dev-packages]
 
