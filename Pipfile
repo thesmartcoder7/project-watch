@@ -12,6 +12,7 @@ whitenoise = "*"
 djangorestframework = "*"
 gunicorn = "*"
 django-heroku = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
