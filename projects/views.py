@@ -201,8 +201,8 @@ def search(request):
 
 @login_required
 def edit_profile(request):
+    current_user = User.objects.get(username=request.user.username)
     if request.method == 'POST':
-        current_user = User.objects.get(username=request.user.username)
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile,)
         context = {
