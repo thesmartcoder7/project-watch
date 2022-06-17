@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, default=None)
-    image = models.ImageField(default='default.png', upload_to='project_watch/user_profiles/')
+    image = models.ImageField(default='https://res.cloudinary.com/smart-code-dev/image/upload/v1654989811/media/default.png', upload_to='project_watch/user_profiles/')
     work_title = models.CharField(max_length=2000, blank=True)
     bio = models.TextField()
     github = models.CharField(max_length=2000, blank=True)
