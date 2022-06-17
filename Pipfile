@@ -13,6 +13,7 @@ djangorestframework = "*"
 gunicorn = "*"
 django-heroku = "*"
 psycopg2-binary = "*"
+django-cloudinary-storage = "*"
 
 [dev-packages]
 
