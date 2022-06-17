@@ -202,12 +202,14 @@ def search(request):
 @login_required
 def edit_profile(request):
     if request.method == 'POST':
+        current_user = User.objects.get(username=request.user.username)
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile,)
         context = {
             'u_form': u_form,
             'p_form': p_form,
-            'year': date.today().year
+            'year': date.today().year,
+            'current_user': current_user
         }
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
@@ -222,7 +224,8 @@ def edit_profile(request):
         context = {
             'u_form': u_form,
             'p_form': p_form,
-            'year': date.today().year
+            'year': date.today().year,
+            'current_user': current_user
         }
         return render(request, 'projects/user_edit.html', context)
 
